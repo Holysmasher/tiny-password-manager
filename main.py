@@ -54,7 +54,24 @@ def load_entries():
 
 
 def update_entry(file):
-    pass
+    updated = input("What website would you like to update?")
+    for entry in file:
+        if updated.lower() in entry['Website']:
+            username = input("What is the username")
+            while username == "":
+                username = input("Please try again. What is the username?")
+            password = input("What is the password?")
+            while password == "":
+                password = input("Please try again. What is the password?")
+            confirm = input(f"Are you sure you want to update {entry['Website']}? (y/n): ")
+            if confirm.lower() == 'y':
+                entry['Username'] = username
+                entry['Password'] = password
+                save_entries(file)
+                print("Entry updated")
+            else:
+                print("Update cancelled")
+            return
 
 
 def delete_entry(file):
@@ -68,6 +85,7 @@ def delete_entry(file):
                 file.remove(entry)
                 save_entries(file)
                 print("Entry deleted")
+                return
     if not found:
         print("No entries found for that website")
 
@@ -93,4 +111,3 @@ while active_program:
         delete_entry(entries)
     elif user_number == 9:
         break
-
