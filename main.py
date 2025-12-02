@@ -1,4 +1,17 @@
 import json
+from cryptography.fernet import Fernet
+from pathlib import Path
+
+key_file_path = Path("key.key")
+if not key_file_path.exists():
+    key = Fernet.generate_key()
+    with open(key_file_path, "wb") as key_file:
+        key_file.write(key)
+else:
+    with open(key_file_path, "rb") as key_file:
+        key = key_file.read()
+
+fernet = Fernet(key)
 
 
 def save_entries(file):
@@ -16,10 +29,12 @@ def add_entry(file):
     password = input("What is the password?")
     while password == "":
         password = input("Please try again. What is the password?")
+
+    encrypted_password = fernet.encrypt(password.encode()).decode()
     entry = {
         "Website": website.lower(),
         "Username": username,
-        "Password": password
+        "Password": encrypted_password
     }
     file.append(entry)
     save_entries(file)
@@ -30,9 +45,10 @@ def search_entries(file):
     search = input("Enter the website to search for")
     for entry in file:
         if search.lower() in entry['Website']:
-            print(entry['Website'])
-            print(entry['Username'])
-            print(entry['Password'])
+            decrypted_password = fernet.decrypt(entry['Password'].encode()).decode()
+            print(f"Website: {entry['Website']}")
+            print(f"Username: {entry['Username']}")
+            print(f"Password: {decrypted_password}")
             found = True
     if not found:
         print("No entries found for that website")
@@ -62,7 +78,7 @@ def update_entry(file):
             confirm = input(f"Are you sure you want to update {entry['Website']}? (y/n): ")
             if confirm.lower() == 'y':
                 entry['Username'] = username
-                entry['Password'] = password
+                entry['Password'] = fernet.encrypt(password.encode()).decode()
                 save_entries(file)
                 print("Entry updated.")
             else:
