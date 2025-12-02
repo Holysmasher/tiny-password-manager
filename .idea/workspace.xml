@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="84c22728-c20f-460c-8452-3d01d6e70ca5" name="Changes" comment="Added delete function">
+    <list default="true" id="84c22728-c20f-460c-8452-3d01d6e70ca5" name="Changes" comment="Added update function">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -88,12 +88,21 @@
       <option name="project" value="LOCAL" />
       <updated>1764628048987</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added update function">
+      <option name="closed" value="true" />
+      <created>1764650129226</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1764650129226</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Start" />
     <MESSAGE value="Added delete function" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added delete function" />
+    <MESSAGE value="Added update function" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added update function" />
   </component>
 </project>

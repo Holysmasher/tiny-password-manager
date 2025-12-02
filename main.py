@@ -1,9 +1,5 @@
 import json
 
-active_program = True
-print("Welcome to the Tiny Password Manager")
-print("What would you like to do?")
-
 
 def save_entries(file):
     with open("Password Manager.json", 'w') as f:
@@ -68,10 +64,11 @@ def update_entry(file):
                 entry['Username'] = username
                 entry['Password'] = password
                 save_entries(file)
-                print("Entry updated")
+                print("Entry updated.")
             else:
-                print("Update cancelled")
+                print("Update cancelled.")
             return
+    print("No entries found for that website.")
 
 
 def delete_entry(file):
@@ -90,24 +87,32 @@ def delete_entry(file):
         print("No entries found for that website")
 
 
-while active_program:
-    user_choice = input("1. Add a new password\n2. Update Password\n3. Search saved Passwords\n4. Delete Password\n"
-                        "9. Quit\n")
+def main():
+    active_program = True
+    print("Welcome to the Tiny Password Manager")
+    print("What would you like to do?")
+    while active_program:
+        user_choice = input("1. Add a new password\n2. Update Password\n3. Search saved Passwords\n4. Delete Password\n"
+                            "9. Quit\n")
 
-    try:
-        user_number = int(user_choice)
-    except:
-        print("That is not a number, please try again")
-        continue
+        try:
+            user_number = int(user_choice)
+        except ValueError:
+            print("That is not a number, please try again")
+            continue
 
-    entries = load_entries()
-    if user_number == 1:
-        add_entry(entries)
-    elif user_number == 2:
-        update_entry(entries)
-    elif user_number == 3:
-        search_entries(entries)
-    elif user_number == 4:
-        delete_entry(entries)
-    elif user_number == 9:
-        break
+        entries = load_entries()
+        if user_number == 1:
+            add_entry(entries)
+        elif user_number == 2:
+            update_entry(entries)
+        elif user_number == 3:
+            search_entries(entries)
+        elif user_number == 4:
+            delete_entry(entries)
+        elif user_number == 9:
+            break
+
+
+if __name__ == "__main__":
+    main()
