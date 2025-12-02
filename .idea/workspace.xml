@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="84c22728-c20f-460c-8452-3d01d6e70ca5" name="Changes" comment="if __name__ == &quot;__main__&quot;:">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="84c22728-c20f-460c-8452-3d01d6e70ca5" name="Changes" comment="Toying with encryption">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -28,7 +27,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Python.main.executor": "Run",
+    "Python.main.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
@@ -107,7 +106,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764650915784</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Toying with encryption">
+      <option name="closed" value="true" />
+      <created>1764652415225</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1764652415225</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -115,6 +122,7 @@
     <MESSAGE value="Added delete function" />
     <MESSAGE value="Added update function" />
     <MESSAGE value="if __name__ == &quot;__main__&quot;:" />
-    <option name="LAST_COMMIT_MESSAGE" value="if __name__ == &quot;__main__&quot;:" />
+    <MESSAGE value="Toying with encryption" />
+    <option name="LAST_COMMIT_MESSAGE" value="Toying with encryption" />
   </component>
 </project>

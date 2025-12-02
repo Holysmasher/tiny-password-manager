@@ -23,9 +23,9 @@ def add_entry(file):
     website = input("What is the website?")
     while website == "":
         website = input("Please try again. What is the website?")
-    username = input("What is the username")
+    username = input("What is the username: ")
     while username == "":
-        username = input("Please try again. What is the username?")
+        username = input("Please try again. What is the username: ")
     password = input("What is the password?")
     while password == "":
         password = input("Please try again. What is the password?")
